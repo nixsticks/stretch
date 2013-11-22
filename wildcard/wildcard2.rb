@@ -2,22 +2,16 @@ require 'awesome_print'
 
 class CardSet
   include Comparable
-  attr_accessor :cards, :budget, :sets, :times, :under_budget
+  attr_accessor :cards, :budget, :sets, :times
 
-  def initialize(budget)
-    @budget = budget
+  def initialize
     @cards = []
     @sets = []
     @times = {}
-    @under_budget = false
   end
 
   def add_card(card)
     cards << card
-  end
-
-  def combinations(num)
-    sets << cards.combination(num).to_a
   end
 
   def generation_times(card)
@@ -39,12 +33,6 @@ class CardSet
     end
 
     count
-  end
-end
-
-class Budgeter
-  def initialize
-    @budget = 2912
   end
 end
 
