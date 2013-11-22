@@ -28,9 +28,7 @@ class CardSet
     container = sort[0..(i-1)]
     count = 0
 
-    container.each do |card|
-      count += generation_times(card) + positioning_times(card, i)
-    end
+    container.each {|card| count += generation_times(card) + positioning_times(card, i)}
 
     count
   end
@@ -50,7 +48,7 @@ class Card
   end
 end
 
-cardset = CardSet.new(Budgeter.new)
+cardset = CardSet.new
 
 30.times do |i|
   cardset.add_card(Card.new(i))
