@@ -3,7 +3,6 @@ require 'awesome_print'
 module AnswerGenerator
   def generate_answer
     30.times do |i|
-      self.total_time(i+1)
       if self.total_time(i+1) >= 2912
         return i
       end
