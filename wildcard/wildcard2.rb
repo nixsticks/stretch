@@ -1,6 +1,18 @@
 require 'awesome_print'
 
+module AnswerGenerator
+  def generate_answer
+    30.times do |i|
+      self.total_time(i+1)
+      if self.total_time(i+1) >= 2912
+        return i
+      end
+    end
+  end
+end
+
 class CardSet
+  include AnswerGenerator
   include Comparable
   attr_accessor :cards, :budget, :sets, :times
 
@@ -54,4 +66,6 @@ cardset = CardSet.new
   cardset.add_card(Card.new(i))
 end
 
-ap cardset.total_time(17)
+ap cardset.generate_answer
+
+# ap cardset.total_time(17)
