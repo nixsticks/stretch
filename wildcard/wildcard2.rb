@@ -67,5 +67,3 @@ cardset = CardSet.new
 end
 
 ap cardset.generate_answer
-
-# ap cardset.total_time(17)
